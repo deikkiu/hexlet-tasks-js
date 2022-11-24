@@ -1,8 +1,7 @@
 const pick = (obj, item) => {
   const result = {};
-  const arr = Object.entries(obj);
 
-  for (const [key, value] of arr) {
+  for (const [key, value] of Object.entries(obj)) {
     item.forEach((el) => {
       if (el === key) result[key] = value;
     });
