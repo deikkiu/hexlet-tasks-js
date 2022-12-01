@@ -1,13 +1,11 @@
-function groupBy(array, prop) {
-  const obj = {};
-
+function groupBy(array, prop, result = {}) {
   array.forEach((el) => {
-    if (el.hasOwnProperty(prop)) {
-      return (obj[el[prop]] ||= []).push(el);
+    if (hasOwnProperty.call(el, prop)) {
+      (result[el[prop]] ||= []).push(el);
     }
   });
 
-  return obj;
+  return result;
 }
 
 const students = [
