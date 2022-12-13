@@ -1,7 +1,9 @@
+const __hasProp = Object.prototype.hasOwnProperty;
+
 function groupBy(array, prop, result = {}) {
   array.forEach((el) => {
-    if (hasOwnProperty.call(el, prop)) {
-      (result[el[prop]] ||= []).push(el);
+    if (__hasProp.call(el, prop)) {
+      result[el[prop]] ? result[el[prop]].push(el) : (result[el[prop]] = [el]);
     }
   });
 
